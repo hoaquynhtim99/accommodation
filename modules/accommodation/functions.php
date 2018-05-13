@@ -38,8 +38,7 @@ if ($op == 'main' and isset($array_op[0])) {
     if (isset($array_op[1])) {
         if (preg_match("/^price\-([0-9]+)$/i", $array_op[1], $m) and preg_match("/^cat\-([0-9]+)$/i", $array_op[0], $k)) {
             if (nv_url_rewrite($_SERVER['REQUEST_URI'], true) != $_SERVER['REQUEST_URI']) {
-                header('Location: ' . nv_url_rewrite($_SERVER['REQUEST_URI'], true));
-                die();
+                nv_redirect_location($_SERVER['REQUEST_URI']);
             }
 
             $search_cat = intval($k[1]);

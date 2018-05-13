@@ -114,6 +114,7 @@ if ($nv_Request->isset_request('submit', 'post')) {
             // Upload image
             if (isset($_FILES['image']) and is_uploaded_file($_FILES['image']['tmp_name'])) {
                 $upload = new NukeViet\Files\Upload(array('images'), $global_config['forbid_extensions'], $global_config['forbid_mimes'], 2097152 /* 2MB */, NV_MAX_WIDTH, NV_MAX_HEIGHT);
+                $upload->setLanguage($lang_global);
                 $upload_info = $upload->save_file($_FILES['image'], NV_UPLOADS_REAL_DIR . '/' . $module_upload, false);
 
                 @unlink($_FILES['image']['tmp_name']);

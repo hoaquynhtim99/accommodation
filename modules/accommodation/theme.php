@@ -22,9 +22,9 @@ if (!defined('NV_MOD_ACCOMMODATION'))
  */
 function nv_main_theme($array, $generate_page, $is_search, $num_items)
 {
-    global $module_file, $lang_module, $module_info;
+    global $lang_module, $module_info;
 
-    $xtpl = new XTemplate('main.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_file);
+    $xtpl = new XTemplate('main.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
 
     foreach ($array as $row) {
@@ -62,9 +62,9 @@ function nv_main_theme($array, $generate_page, $is_search, $num_items)
  */
 function nv_detail_theme($row, $others)
 {
-    global $module_file, $lang_module, $module_info, $global_array_cat;
+    global $lang_module, $module_info, $global_array_cat;
 
-    $xtpl = new XTemplate('detail.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_file);
+    $xtpl = new XTemplate('detail.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
 
     $row['price'] = number_format($row['price'], 0, '.', ',');
@@ -109,9 +109,9 @@ function nv_detail_theme($row, $others)
  */
 function nv_info_theme($message, $link, $type = 'info')
 {
-    global $module_file, $lang_module, $module_info;
+    global $lang_module, $module_info;
 
-    $xtpl = new XTemplate('info.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_file);
+    $xtpl = new XTemplate('info.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
     $xtpl->assign('MESSAGE', $message);
     $xtpl->assign('LINK', $link);
@@ -135,9 +135,9 @@ function nv_info_theme($message, $link, $type = 'info')
  */
 function nv_content_theme($array, $error)
 {
-    global $module_file, $lang_module, $module_info, $lang_global, $module_name, $op, $global_array_cat;
+    global $lang_module, $module_info, $lang_global, $module_name, $op, $global_array_cat;
 
-    $xtpl = new XTemplate('content.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_file);
+    $xtpl = new XTemplate('content.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
     $xtpl->assign('GLANG', $lang_global);
     $xtpl->assign('FORM_ACTION', NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $op);

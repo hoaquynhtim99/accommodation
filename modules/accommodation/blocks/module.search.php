@@ -11,9 +11,9 @@
 if (!defined('NV_MAINFILE'))
     die('Stop!!!');
 
-global $lang_module, $module_info, $module_file, $global_array_cat, $search_cat, $search_price;
+global $lang_module, $module_info, $global_array_cat, $search_cat, $search_price;
 
-$xtpl = new XTemplate('block.search.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_file);
+$xtpl = new XTemplate('block.search.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
 $xtpl->assign('LANG', $lang_module);
 
 foreach ($global_array_cat as $cat) {
