@@ -15,6 +15,7 @@ $page_title = $module_info['site_title'];
 $key_words = $module_info['keywords'];
 
 $base_url = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name;
+$canonicalUrl = getCanonicalUrl($base_url, true,true);
 $base_url_rewrite = nv_url_rewrite($base_url, true);
 $page_url_rewrite = $page ? nv_url_rewrite($base_url . '/page-' . $page, true) : $base_url_rewrite;
 $request_uri = $_SERVER['REQUEST_URI'];
